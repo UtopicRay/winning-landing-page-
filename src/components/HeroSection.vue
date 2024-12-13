@@ -32,10 +32,11 @@ function handleClick() {
 onMounted(() => {
   gsap.set('#video-frame', {
     clipPath: 'polygon(16% 0%, 79% 0%, 97% 79%, 0% 100%)',
+    borderRadius: '50px 50px, 0px 50%, 0 50%, 0 50%',
   })
   gsap.from('#video-frame', {
     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-    borderRadius: '50px 50px, 0px 50%, 0 50%, 0 50%',
+    borderRadius: '0 0, 0px 0, 0 0, 0 0',
     duration:1,
     ease:'power1.inOut',
     scrollTrigger: {
