@@ -1,0 +1,47 @@
+---
+---
+<div class="story-img-container">
+    <div class="story-img-mask" id="story-image">
+        <div class="story-img-content" >
+            <img  src="/img/entrance.webp" alt="story_img"/>
+        </div>
+    </div>
+</div>
+<script >
+    import gsap from 'gsap';
+    const imageRef = document.querySelector("#story-image");
+
+    imageRef?.addEventListener("mousemove", MouseEnter)
+    imageRef?.addEventListener("mouseleave", MouseLeave)
+
+    function MouseEnter(e) {
+        const {left, top, width, height} = imageRef.getBoundingClientRect()
+        const {clientX, clientY} = e;
+        const x = clientX - left;
+        const y = clientY - top;
+
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * 15;
+        const rotateY = ((x - centerX) / centerX) * -15;
+
+        gsap.to(imageRef, {
+            perspective: 500,
+            ease: 'power1.inOut',
+            duration:0.3,
+            rotateX: rotateX,
+            rotateY: rotateY,
+        })
+
+    }
+
+    function MouseLeave() {
+        gsap.to(imageRef, {
+            perspective: 0,
+            duration: 0.3,
+            rotateX: 0,
+            rotateY: 0,
+        })
+    }
+</script>

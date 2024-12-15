@@ -1,0 +1,27 @@
+---
+import AnimatedTitle from './AnimatedTitle.vue'
+import Button from './Button.vue'
+import StoryImg from "./StoryImg.astro";
+import RoundedImg from "./RoundedImg.astro";
+---
+<section id="story" class="min-h-dvh bg-black w-screen text-blue-50">
+    <article class="flex flex-col items-center size-full pt-16 pb-24">
+        <p class="uppercase font-general text-sm ">The open IP Universe</p>
+        <AnimatedTitle client:visible title="The History of <br/> a Hidden Realm"
+                       containerClass='mix-blend-difference pointer-event-none relative z-10 !text-center mt-5'></AnimatedTitle>
+        <StoryImg/>
+        <RoundedImg/>
+        <div class="-mt-80 flex w-full md:-mt-64 justify-center md:justify-end md:me-44">
+            <div class="flex flex-col h-full w-fit md:items-start items-center gap-3">
+                <p class="max-w-sm font-circular-web text-violet-50">
+                    The Open IP Universe
+                    The story of
+                    a hidden realm
+                    Where realms converge, lies Zentry and the boundless pillar. Discover its secrets and shape your
+                    fate
+                    amidst infinite opportunities.</p>
+                <Button title='Discover Prologue' containerClass='bg-blue-75 text-black' client:visible></Button>
+            </div>
+        </div>
+    </article>
+</section>
