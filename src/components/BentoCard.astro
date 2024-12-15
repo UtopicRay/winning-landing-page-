@@ -1,0 +1,17 @@
+---
+interface Props {
+    description:string,
+    video:string,
+    commingSoon?:boolean
+}
+const {description, video, commingSoon} = Astro.props
+---
+<div class="relative size-full cursor-pointer border-hsla  rounded-md">
+    <video muted autoplay loop src={video} class="absolute size-full object-cover object-center top-0 left-0"></video>
+    <div class="flex flex-col gap-2 z-30 absolute top-4 left-3 max-w-md">
+        <p class="bento-title text-blue-75 special-font ">
+            <slot></slot>
+        </p>
+        <p class="max-w-sm text-blue-75 md:text-base text-xs">{description}</p>
+    </div>
+</div>
