@@ -2,6 +2,7 @@
 import {onMounted, toRef, useTemplateRef, watch} from "vue";
 import '/public/index.css';
 import gsap from "gsap"
+import Button from "./Button.vue";
 /*import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 gsap.registerPlugin( ScrollTrigger)*/
@@ -41,10 +42,11 @@ onMounted(() => {
     ease:'power1.inOut',
     scrollTrigger: {
       scrub:true,
+      start:'center center',
+      end:'bottom center',
+      trigger:"#video-frame"
     },
   })
-
-
 })
 
 watch(nextIndex, () => {
@@ -68,9 +70,7 @@ watch(nextIndex, () => {
       ease: 'power1.inOut',
     })
   })
-  setInterval(() => {
-   cxt.revert()
-  }, 2000)
+  return ()=>cxt.revert()
 })
 
 </script>
@@ -97,15 +97,16 @@ watch(nextIndex, () => {
             <h1 class="special-font text-blue-100 hero-heading">redifi<b>n</b>e</h1>
             <p class="max-w-64 text-blue-100">Enter the Metagame
               <br>Unleash the Play Economy</p>
-            <button class="group flex gap-2 z-10 rounded-full bg-yellow-300 px-7 py-3 w-fit overflow-hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24" fill=""
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                   class="icon icon-tabler icons-tabler-outline icon-tabler-location">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"/>
-              </svg>
-              <span>Watch Trailer</span>
-            </button>
+            <Button title="Watch Trailer" container-class="bg-yellow-300 text-black">
+              <template #leftIcon>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24" fill=""
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="icon icon-tabler icons-tabler-outline icon-tabler-location">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"/>
+                </svg>
+              </template>
+            </Button>
           </div>
         </div>
       </div>
