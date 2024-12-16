@@ -1,0 +1,34 @@
+---
+import AnimatedTitle from './AnimatedTitle.vue';
+import Button from './Button.vue';
+import ClickedImage from './ClickedImage.vue';
+---
+<section id="discover" class="min-h-screen w-screen bg-blue-75 pt-16 pb-24 px-3">
+    <article class="relative flex flex-col gap-10 text-black justify-center items-center w-full">
+        <p class="uppercase font-general text-sm">who we are</p>
+        <div class="flex flex-col relative justify-center items-center gap-3 ">
+            <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem]" title="We're building"/>
+            <div class="flex flex-row justify-center items-center w-full relative text-7xl">
+                <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem] " title="a new"/>
+                <ClickedImage img='/img/swordman.webp' containerClass='absolute md:mr-24 mr-16' client:visible/>
+                <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem] !pl-20" title="reality"/>
+            </div>
+            <AnimatedTitle client:visible containerClass="!text-black !tracking-wide" title="that rewards"/>
+            <div class="flex flex-row justify-center items-center w-full relative">
+                <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem]" title="players"/>
+                <ClickedImage img='/img/gallery-5.webp' containerClass='absolute md:ml-40 ml-24' client:visible/>
+                <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem] !pl-14" title="and"/>
+            </div>
+            <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem]"
+                           title="encourages <br/> communities"/>
+            <div class="flex flex-row justify-center items-center w-full relative">
+                <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem] " title="to"/>
+                <ClickedImage img='/img/gallery-3.webp' containerClass='absolute md:mr-40 mr-24 ' client:visible/>
+                <AnimatedTitle client:visible containerClass="!text-black lg:!text-[7rem] !pl-14" title="Thrive"/>
+            </div>
+        </div>
+        <p class="text-center">Zentry is on a mission to unite diverse player networks to <br/> forge the world's
+            largest shared adventure.</p>
+        <Button client:visible title="DISCOVER WHO WE ARE" containerClass='text-blue-75 bg-black'></Button>
+    </article>
+</section>

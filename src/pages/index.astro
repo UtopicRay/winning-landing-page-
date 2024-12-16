@@ -1,13 +1,23 @@
 ---
 import HeroSection from "../components/HeroSection.vue";
 import Layout from "../layouts/Layout.astro";
+import AboutSection from "../components/AboutSection.astro";
+import FeaturesSection from "../components/FeaturesSection.astro";
+import StorySection from "../components/StorySection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import DiscoverSection from "../components/DiscoverSection.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <main class="overflow-x-hidden min-h-screen w-screen relative">
+  <main class="overflow-x-hidden  w-screen relative">
       <HeroSection client:visible />
+      <AboutSection/>
+      <FeaturesSection/>
+      <StorySection/>
+      <DiscoverSection/>
+      <ContactSection/>
   </main>
 </Layout>

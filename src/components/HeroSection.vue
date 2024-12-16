@@ -3,15 +3,11 @@ import {onMounted, toRef, useTemplateRef, watch} from "vue";
 import '/public/index.css';
 import gsap from "gsap"
 import Button from "./Button.vue";
-/*import {ScrollTrigger} from "gsap/ScrollTrigger";
 
-gsap.registerPlugin( ScrollTrigger)*/
 
-const isLoading = toRef<boolean>(true);
 const hasClicked = toRef<boolean>(false);
 const currentIndex = toRef<number>(1);
 const nextIndex = toRef<number>(2);
-const loadedVideos = toRef<number>(0);
 const currentVideo = toRef<string>(`/videos/hero-${currentIndex.value}.mp4`);
 const nextVideo = toRef<string>(`/videos/hero-${nextIndex.value}.mp4`)
 const refNextVideo = useTemplateRef<HTMLVideoElement>('next-video')

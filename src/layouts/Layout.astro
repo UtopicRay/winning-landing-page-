@@ -1,3 +1,7 @@
+---
+import Navbar from '../components/Navbar.vue'
+import Footer from "../components/Footer.astro";
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,11 +12,28 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+	<Navbar client:visible/>
 		<slot />
+	<Footer/>
 	</body>
 </html>
 <script>
 	import gsap from 'gsap';
 	import {ScrollTrigger} from "gsap/all";
 	gsap.registerPlugin(ScrollTrigger);
+	const clipAnimation = gsap.timeline({
+		scrollTrigger: {
+			trigger: '#clip',
+			start: 'center center',
+			end: '+=200 center',
+			scrub: 0.5,
+			pin: true,
+			pinSpacing: true,
+		}
+	})
+	clipAnimation.to('.about-image', {
+		width: '100vw',
+		height: '100vh',
+		borderRadius: '0',
+	})
 </script>

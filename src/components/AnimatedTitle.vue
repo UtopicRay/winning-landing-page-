@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="animated-title" :class="`${props.containerClass} animated-title w-full`" >
+  <div ref="animated-title" :class="`${props.containerClass} animated-title`" >
     <div class="flex-center flex-wrap max-w-full gap-2" v-for="(line,index) in lines" :key="index">
       <span class="animated-word" v-for="(word,index) in line.split(' ')" :key="index">{{ word }}</span>
     </div>

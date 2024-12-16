@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import {toRef, useTemplateRef} from "vue";
+import Button from "./Button.vue";
 
 const navItem = toRef<string[]>(['Nexus', 'Vault', 'Prologue', 'About', 'Contact'])
-const indicatorActive=toRef<boolean>(false);
+const indicatorActive=toRef<boolean>(true);
 const audioRef=useTemplateRef('audioRef');
 
 function handleAudio(){
@@ -20,15 +21,16 @@ function handleAudio(){
     <nav class="flex justify-between items-center size-full floating-nav px-6 border-black">
       <div class="flex items-center gap-x-4">
         <img src="/img/logo.png" alt="logo_album"/>
-        <button class="group flex gap-2 z-10 rounded-full bg-blue-50 px-7 py-3 w-fit overflow-hidden">
-          <span>Products</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24" fill=""
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-               class="icon icon-tabler icons-tabler-outline icon-tabler-location">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"/>
-          </svg>
-        </button>
+        <Button title="Products" container-class="bg-blue-50 text-black hidden md:flex">
+          <template #rightIcon>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24" fill=""
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="icon icon-tabler icons-tabler-outline icon-tabler-location">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"/>
+            </svg>
+          </template>
+        </Button>
       </div>
       <div class="flex items-center h-full">
         <div class="md:block hidden" v-for="nav in navItem" :key="nav">
