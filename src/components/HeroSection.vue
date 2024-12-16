@@ -66,7 +66,9 @@ watch(nextIndex, () => {
       ease: 'power1.inOut',
     })
   })
-  return ()=>cxt.revert()
+  setInterval(() => {
+    cxt.revert()
+  }, 1501)
 })
 
 </script>
