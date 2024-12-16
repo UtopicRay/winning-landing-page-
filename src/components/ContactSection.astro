@@ -1,0 +1,30 @@
+---
+import Button from './Button.vue'
+---
+<section id="contact" class="my-20 min-h-96 w-screen px-10">
+    <article class="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
+        <div class="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block md:left-20 lg:w-96">
+            <div class="contact-clip-path-1">
+                <img src="/img/contact-1.webp" alt="img-contact"/>
+            </div>
+            <div class="contact-clip-path-2  translate-y-60 lg:translate-y-40">
+                <img src="/img/contact-2.webp" alt="img-contact"/>
+            </div>
+        </div>
+        <div class="absolute left-20 -top-40 w-60 block sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
+            <div class="absolute md:scale-125">
+                <img src="/img/swordman-partial.webp" alt="img-swordman-partial"/>
+            </div>
+            <div class="sword-man-clip-path md:scale-125">
+                <img src="/img/swordman.webp" alt="img-swordman"/>
+            </div>
+        </div>
+        <div class="flex flex-col gap-10 justify-center items-center text-center">
+            <p class="uppercase font-general text-sm">Join Zentry</p>
+            <h3 class="text-5xl md:text-[6rem] leading-[0.9] special-font w-full font-zentry">let’s build the<br/>new era of gaming<br/>together.
+            </h3>
+            <Button client:visible title="Contact us" containerClass='uppercase bg-blue-75 text-black '></Button>
+        </div>
+    </article>
+
+</section>
